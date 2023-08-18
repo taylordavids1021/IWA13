@@ -6,22 +6,24 @@ let calculated = '1'
 
 
 const logCalc = () => {                                                             // put = in the correct place  
-    const isString = typeof calculated = 'numerical-string' 
-    const calculatedAsNumber = isString ? calculated : parseNumber(calculated)
-    calculated === calculatedAsNumber + 1 
+    const isString = typeof parseInt(calculated)
+    const calculatedAsNumber = isString ? calculated : parseInt(calculated)
+    return parseInt(calculated) === calculatedAsNumber + 1 
 }
 
 const calcUser = () => {
   logCalc
-  if (calculated > 2) user = 'John'
-  if (calculated > 2) state = 'requesting'
-  if (calculated > 3) state = 'idle'
+  if (parseInt(calculated) >= 2) user = 'John'
+  if (parseInt(calculated) >= 2) state = 'requesting'
+  if (parseInt(calculated) >= 3) state = 'idle'
+  return logCalc
 }
 
 const checkUser = () => {
 	if (user && state === 'requesting') {
 		console.log(`User: ${user} (${calculated})`)
 	}
+    return checkUser
 }
 
 // Only allowed to change code above
