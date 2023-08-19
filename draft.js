@@ -15,12 +15,14 @@ logCalc()
 
 
 const calcUser = () => {
-  logCalc()
-  if (parseInt(calculated) = 2) {user = 'John'}
-  if (parseInt(calculated) = 1) {state = 'requesting'}
-  if (parseInt(calculated) = 3) {state = 'idle'}
-//   return logCalc() === 2
-    console.log(calcUser())
+  if (logCalc() && parseInt(calculated) === 2){
+    user = 'John'
+  } else if (logCalc() && parseInt(calculated) === 1){
+    state = 'requesting'
+  } else (logCalc() && parseInt(calculated) === 3){
+    state = 'idle'
+  }
+  return logCalc() === calcUser()
 }
 
 
