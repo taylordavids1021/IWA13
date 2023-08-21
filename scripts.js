@@ -3,30 +3,25 @@ let user = null
 let calculated = '1'
 
 // Only allowed to change below
-
-
 const logCalc = () => { 
-    const isString = parseInt(calculated)
-    const calculatedAsNumber = isString ? calculated : parseInt(calculated)
-    return isString + parseInt(calculatedAsNumber) + 1
+  const isString = typeof calculated === 'string' 
+  const calculatedAsNumber = isString ? Number(calculated) : calculated
+  calculated = calculatedAsNumber + 1 
 }
 
 const calcUser = () => {
-  let userStatus;
-  if (logCalc() >= 2){
-    userStatus = 'John';
-  } else {
-    userStatus = 'requesting';
-  } return userStatus;
+  logCalc()
+  if (calculated > 2){user = 'John'}
+  if (calculated > 2){state = 'requesting'}
+  if (calculated > 3){state = 'idle'}
 }
 
 const checkUser = () => {
 	if (user && state === 'requesting') {
-		console.log(`User: ${calcUser()} (${logCalc()})`)
+		console.log(`User: ${user} (${calculated})`)
 	}
 }
 
-console.log(`User: ${calcUser()} (${logCalc()})`)
 // Only allowed to change code above
 
 checkUser()
