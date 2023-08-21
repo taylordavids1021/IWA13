@@ -10,25 +10,16 @@ const logCalc = () => {
     const calculatedAsNumber = isString ? calculated : parseInt(calculated)
     return isString + parseInt(calculatedAsNumber) + 1
 }
-logCalc()
-
-
 
 const calcUser = () => {
-  if (logCalc() && parseInt(calculated) === 2){
-    user = 'John'
-  } else if (logCalc() && parseInt(calculated) === 1){
-    state = 'requesting'
-  } else (logCalc() && parseInt(calculated) === 3){
-    state = 'idle'
-  }
-  return logCalc() === calcUser()
+    if (logCalc() > 2) user = 'John'
+    if (logCalc() > 2) state = 'requesting'
+    if (logCalc() > 3) state = 'idle'
 }
-
 
 const checkUser = () => {
 	if (user && state === 'requesting') {
-		console.log(`User: ${user} (${calculated})`)
+		console.log(`User: ${user} (${logCalc()})`)
 	}
 }
 
