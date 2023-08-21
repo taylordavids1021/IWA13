@@ -5,25 +5,22 @@ let calculated = '1'
 // Only allowed to change below
 
 
-const logCalc = () => {                                                             // put = in the correct place  
-    const isString = typeof parseInt(calculated)
+const logCalc = () => { 
+    const isString = parseInt(calculated)
     const calculatedAsNumber = isString ? calculated : parseInt(calculated)
-    return parseInt(calculated) === calculatedAsNumber + 1 
+    return isString + parseInt(calculatedAsNumber) + 1
 }
 
 const calcUser = () => {
-  logCalc
-  if (parseInt(calculated) >= 2) user = 'John'
-  if (parseInt(calculated) >= 2) state = 'requesting'
-  if (parseInt(calculated) >= 3) state = 'idle'
-  return logCalc
+    if (logCalc() > 2){user = 'John'}
+    if (logCalc() > 2){state = 'requesting'}
+    if (logCalc() > 3){state = 'idle'}
 }
 
 const checkUser = () => {
 	if (user && state === 'requesting') {
-		console.log(`User: ${user} (${calculated})`)
+		console.log(`User: ${user} (${logCalc()})`)
 	}
-    return checkUser
 }
 
 // Only allowed to change code above
