@@ -12,14 +12,17 @@ const logCalc = () => {
 }
 
 const calcUser = () => {
-    if (logCalc() > 2){user = 'John'}
-    if (logCalc() > 2){state = 'requesting'}
-    if (logCalc() > 3){state = 'idle'}
+  let userStatus;
+  if (logCalc() > 2){
+    userStatus = 'John';
+  } else {
+    userStatus = 'requesting';
+  } return userStatus;
 }
 
 const checkUser = () => {
 	if (user && state === 'requesting') {
-		console.log(`User: ${user} (${logCalc()})`)
+		console.log(`User: ${calcUser()} (${logCalc()})`)
 	}
 }
 
