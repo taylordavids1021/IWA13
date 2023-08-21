@@ -13,7 +13,7 @@ const logCalc = () => {
 
 const calcUser = () => {
   let userStatus;
-  if (logCalc() > 2){
+  if (logCalc() >= 2){
     userStatus = 'John';
   } else {
     userStatus = 'requesting';
@@ -26,6 +26,7 @@ const checkUser = () => {
 	}
 }
 
+console.log(`User: ${calcUser()} (${logCalc()})`)
 // Only allowed to change code above
 
 checkUser()
